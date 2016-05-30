@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 azu. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface MatchTests : SenTestCase
+@interface MatchTests : XCTestCase
 
 @end

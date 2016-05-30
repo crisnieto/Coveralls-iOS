@@ -3,10 +3,10 @@
 //
 
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "NSArray+AL_firstObject.h"
 
-@interface NSArrayAL_firstObjectTest : SenTestCase
+@interface NSArrayAL_firstObjectTest : XCTestCase
 @end
 
 @implementation NSArrayAL_firstObjectTest {
@@ -15,6 +15,6 @@
 - (void)testAL_firstObject {
     NSArray *array = @[@1, @2, @3];
     id firstObject = [array AL_firstObject];
-    STAssertEquals(firstObject, [array objectAtIndex:0], @"first object is @1");
+    XCTAssertEqual(firstObject, [array objectAtIndex:0], @"first object is @1");
 }
 @end

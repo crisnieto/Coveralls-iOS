@@ -11,7 +11,6 @@
 		17B5CCB19EF2217C0B05C01B /* NSArray+AL_firstObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C0D8DEA5060E2ADE965F /* NSArray+AL_firstObject.m */; };
 		17B5CEAA99CE3A9074F6365B /* NSArray+AL_firstObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CC644B084D391F9ECB34 /* NSArray+AL_firstObjectTest.m */; };
 		73E85471178547B100D75127 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E85470178547B100D75127 /* Foundation.framework */; };
-		73E85480178547B200D75127 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E8547F178547B200D75127 /* SenTestingKit.framework */; };
 		73E85482178547B200D75127 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E85481178547B200D75127 /* UIKit.framework */; };
 		73E85483178547B200D75127 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E85470178547B100D75127 /* Foundation.framework */; };
 		73E85486178547B200D75127 /* libCoveralls-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E8546D178547B100D75127 /* libCoveralls-iOS.a */; };
@@ -50,8 +49,7 @@
 		73E8546D178547B100D75127 /* libCoveralls-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCoveralls-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E85470178547B100D75127 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		73E85474178547B100D75127 /* Coveralls-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coveralls-iOS-Prefix.pch"; sourceTree = "<group>"; };
-		73E8547E178547B200D75127 /* Coveralls-iOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coveralls-iOSTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		73E8547F178547B200D75127 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		73E8547E178547B200D75127 /* Coveralls-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coveralls-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E85481178547B200D75127 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		73E85489178547B200D75127 /* Coveralls-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coveralls-iOSTests-Info.plist"; sourceTree = "<group>"; };
 		73E8548B178547B200D75127 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73E85480178547B200D75127 /* SenTestingKit.framework in Frameworks */,
 				73E85482178547B200D75127 /* UIKit.framework in Frameworks */,
 				73E85483178547B200D75127 /* Foundation.framework in Frameworks */,
 				73E85486178547B200D75127 /* libCoveralls-iOS.a in Frameworks */,
@@ -107,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				73E8546D178547B100D75127 /* libCoveralls-iOS.a */,
-				73E8547E178547B200D75127 /* Coveralls-iOSTests.octest */,
+				73E8547E178547B200D75127 /* Coveralls-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				73E85470178547B100D75127 /* Foundation.framework */,
-				73E8547F178547B200D75127 /* SenTestingKit.framework */,
 				73E85481178547B200D75127 /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -197,8 +193,8 @@
 			);
 			name = "Coveralls-iOSTests";
 			productName = "Coveralls-iOSTests";
-			productReference = 73E8547E178547B200D75127 /* Coveralls-iOSTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 73E8547E178547B200D75127 /* Coveralls-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -206,6 +202,7 @@
 		73E85465178547B100D75127 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0730;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = azu;
 			};
@@ -382,13 +379,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coveralls-iOS/Coveralls-iOS-Prefix.pch";
 				INFOPLIST_FILE = "Coveralls-iOSTests/Coveralls-iOSTests-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -398,13 +395,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coveralls-iOS/Coveralls-iOS-Prefix.pch";
 				INFOPLIST_FILE = "Coveralls-iOSTests/Coveralls-iOSTests-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

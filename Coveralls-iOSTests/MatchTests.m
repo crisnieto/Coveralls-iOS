@@ -11,6 +11,6 @@
 @implementation MatchTests
 - (void)testAdd{
     NSInteger result = [Math add:1 to:1];
-    STAssertEquals(result, 2, @"1+1");
+    XCTAssertEqual(result, 2, @"1+1");
 }
 @end
