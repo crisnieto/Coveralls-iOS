@@ -1,0 +1,6 @@
+coverage_service: coveralls
+xcodeproj: Coveralls-iOS.xcodeproj
+scheme: ci
+ignore:
+  - ExamplePodCode/*
+  - ProjectTestsGroup/*
