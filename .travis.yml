@@ -1,5 +1,4 @@
 sudo: false
 language: objective-c
 osx_image: xcode7.3
-xcode_project: Coveralls-iOS.xcodeproj # path to your xcodeproj folder
-xcode_scheme: ci
+script: ./script/run-test.sh
