@@ -1,3 +1,5 @@
 Coveralls-iOS.xcodeproj/project.xcworkspace/
 Coveralls-iOS.xcodeproj/xcuserdata/
 script/gcov/
+html/
+prueba_reporte.xml/
