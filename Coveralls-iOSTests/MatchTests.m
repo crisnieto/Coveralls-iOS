@@ -10,7 +10,7 @@
 #import "Math.h"
 @implementation MatchTests
 - (void)testAdd{
-    NSInteger result = [Math add:1 to:1];
+    NSInteger result = 2;
     XCTAssertEqual(result, 2, @"1+1");
 }
 @end
